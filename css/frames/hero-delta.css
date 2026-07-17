@@ -1,0 +1,16 @@
+.hero-delta {
+    background: var(--secondary-ultra-light);
+}
+.hero-delta__inner {
+   display: grid;
+   gap: var(--content-gap);
+   justify-content: center;
+   align-items: center;
+   justify-content: center;
+}
+
+.hero-delta__buttons {
+    @media (width > 810px) {
+        margin: auto;
+    }
+}

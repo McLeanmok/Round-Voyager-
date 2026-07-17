@@ -1,0 +1,160 @@
+/* Reasons */
+.reasons__inner {
+  display: grid;
+  gap: var(--gap-lg);
+}
+.reasons__gallery {
+  display: grid;
+  gap: var(--grid-gap);
+
+  @media (width > 810px) {
+    grid-template-columns: var(--grid-3-static);
+  }
+}
+
+.reasons-card-list {
+  display: grid;
+  grid-template-columns: var(--grid-3);
+  gap: var(--grid-gap);
+}
+
+/* benefits  */
+.benefits {
+  background: var(--primary-ultra-light);
+}
+.benefits__inner {
+  display: grid;
+  gap: var(--container-gap);
+}
+.benefits__list {
+  display: grid;
+  gap: var(--grid-gap);
+  grid-template-columns: var(--grid-3);
+}
+
+/* outcomes  */
+.outcomes__inner {
+  display: grid;
+  gap: calc(var(--container-gap) * 1.5);
+}
+
+.outcomes__list {
+  display: grid;
+  gap: var(--content-gap);
+}
+
+.outcome-card {
+  display: grid;
+  gap: var(--gap-md);
+
+  /* has me for container queries */
+  :has(> &) {
+    container-type: inline-size;
+  }
+  @container (inline-size > 830px) {
+    grid-template-columns: var(--grid-2);
+    align-items: center;
+  }
+}
+
+.outcome-card__content-wrapper {
+  display: grid;
+  gap: var(--gap-sm);
+}
+/* Rotating media whenever the card has space */
+:where(.outcomes__list-item:nth-child(2) .outcome-card__media-wrapper) {
+  /* Has me */
+  :has(> &) {
+    container-type: inline-size;
+  }
+  @container (inline-size > 830px) {
+    order: -1;
+  }
+}
+.outcome-card__heading {
+  font-size: var(--fs-h3);
+}
+
+/* CTA */
+.cta-fancy {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--section-padding-xl);
+  isolation: isolate;
+
+  @media (width < 768px) {
+    padding-block: var(--section-padding-lg);
+  }
+}
+
+/* Alignment of the button  */
+:where(.cta-fancy .standard-btn) {
+  justify-self: flex-start;
+}
+
+.cta-fancy__media-wraper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  z-index: 0;
+
+  @media (width < 768px) {
+    position: relative;
+    inset: auto;
+    min-height: calc(var(--section-padding-xl) * 1.5);
+  }
+
+  /* overlay */
+  &::before {
+    --background-base-color:color-mix(in srgb, var(--secondary-dark) 80%, transparent);
+    content: "";
+    position: absolute;
+    inset: 0;
+    display: block;
+    background: linear-gradient(to right, var(--background-base-color) 60%, transparent 30%);
+    pointer-events: none;
+
+    @media (width < 768px) {
+      background: linear-gradient(to bottom, var(--background-base-color) 0%, transparent 100%);
+    }
+  }
+}
+
+.fancy-cta__media {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cta-fancy__content-wrapper {
+  position: relative;
+  z-index: 1;
+  color: var(--white);
+  /* Gapping it out  */
+  display: grid;
+  gap: var(--gap-sm);
+  
+  @media (width < 768px) {
+    padding-block-start: var(--gap-md);
+  }
+}
+
+.cta-fancy__lede {
+  max-inline-size: 50ch;
+}
+.cta-fancy__headline {
+  max-inline-size: 15ch;
+
+  @media (width < 768px) {
+    max-inline-size: none;
+  }
+}
+
+.cta-fancy__lede {
+  @media (width < 768px) {
+    max-inline-size: none;
+  }
+}

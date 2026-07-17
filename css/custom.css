@@ -1,0 +1,21 @@
+/* inports */
+/* Internal Files */
+@import url(components/index.css);
+@import url(frames/index.css);
+
+/* Public Sans -- heading font */
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,700;1,700&display=swap");
+/* Inter -- Body Font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&display=swap");
+
+/* Themeing */
+:root {
+  /* Pallette */
+  --primary: oklch(54.427% 0.0499 234.767);
+  --secndary: oklch(0.66 0.08 225);
+  --tertiary: oklch(0.39 0.03 235);
+  --surface: oklch(0.16 0.02 235);
+  /* Fonts */
+  --ff-headings: "Public Sans", sans-serif;
+  --ff-body: "Inter", sans-serif;
+}
